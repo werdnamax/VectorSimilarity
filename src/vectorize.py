@@ -5,12 +5,15 @@ import json
 model_path = "model/GoogleNews-vectors-negative300.bin"
 model = KeyedVectors.load_word2vec_format(model_path, binary=True)
 
+# Load the course data from the JSON file
 with open("courses.json", "r") as f:
     course_data = json.load(f)[1:]
 
 
+# Function to get the vector representation of a word
 def embedding(text):
     try:
+        # Remove semantic irrelevant punctuation
         return model[
             text.lower()
             .replace(",", "")
@@ -26,6 +29,7 @@ def embedding(text):
         return None
 
 
+# Function to get the vector representation of a text
 def vectorize_text(text):
     words = text.split()
     if text == "":
@@ -37,9 +41,6 @@ def vectorize_text(text):
     else:
         vector = embedding(text)
     return vector.tolist() if vector is not None else None
-
-    # print(f"Course: {text}")
-    # print(f"Vector: {vector}\n")
 
 
 # Function to get the vector representation of a word
