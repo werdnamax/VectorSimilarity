@@ -22,3 +22,4 @@ docker compose up
 ```
 
 Then run main (either with IDE or with CLI)
+
