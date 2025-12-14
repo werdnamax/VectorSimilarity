@@ -1,4 +1,4 @@
-import src.vectorize as vectorize
+import vectorize as vectorize
 
 
 # calculate cosine similarity between two vectors

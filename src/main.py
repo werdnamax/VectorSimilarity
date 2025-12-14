@@ -1,7 +1,7 @@
 from pymongo import MongoClient
 import export
-import src.similarity as similarity
-import src.vectorize as vectorize
+import similarity as similarity
+import vectorize as vectorize
 
 
 def main():
